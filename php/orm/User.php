@@ -208,6 +208,11 @@ class User
 			$temporarilyManagedSites[] = Site::findByName("GSM Institute at Tremont");
 		}
 		
+		//"East Carolina University (NC)" Managers
+		if($this->email == "ecu.caterpillarscount@gmail.com" || $this->email == "vancechalcrafth@ecu.edu" || $this->email == "bunnella@ecu.edu" || $this->email == "dowa05@students.ecu.edu" || $this->email == "stanoe@ecu.edu"){
+			$temporarilyManagedSites[] = Site::findByName("East Carolina University");
+		}
+		
 		//Everyone else
 		$managedSites = Site::findManagedSitesByManager($this);
 		$ownedSites = Site::findSitesByCreator($this);
